@@ -34,8 +34,11 @@ const lastYear = `${currentYear - 1}-${currentMonth}-${currentDay}`;
 
 //Calling Popular Games within a range of lastYear -> currentDate. Then ordering top 10 by rating
 const popularGames = `games?dates=${lastYear},${currentDate}&ordering=-rating&page_size=10`;
-
+//Calling upcoming games within a range of next year
+const upcomingGames = `games?dates=${currentDate},${nextYear}&ordering=-added`;
+//Calling new games that have already been released
+const newGames = `games?dates=${lastYear},${currentDate}&ordering=-released`;
 //Concating full API call
-const popularGamesURL = () => `${baseUrl}${popularGames}`;
-
-console.log(currentDate, nextYear, lastYear, popularGamesURL());
+export const popularGamesUrl = () => `${baseUrl}${popularGames}`;
+export const upcomingGamesUrl = () => `${baseUrl}${upcomingGames}}`;
+export const newGamesUrl = () => `${baseUrl}${newGames}}`;
