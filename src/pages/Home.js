@@ -8,6 +8,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 //Components
 import Game from "../components/Game";
+import GameDetail from "../components/GameDetail";
 
 const Home = () => {
   //Fetching data from loadgames action
@@ -20,6 +21,7 @@ const Home = () => {
 
   return (
     <GameList>
+      <GameDetail />
       <h2>Upcoming Games</h2>
       <Games>
         {upcoming.map((game) => (
@@ -28,6 +30,7 @@ const Home = () => {
             released={game.released}
             image={game.background_image}
             key={game.id}
+            id={game.id}
           ></Game>
         ))}
       </Games>
@@ -39,6 +42,7 @@ const Home = () => {
             released={game.released}
             image={game.background_image}
             key={game.id}
+            id={game.id}
           ></Game>
         ))}
       </Games>
@@ -50,6 +54,7 @@ const Home = () => {
             released={game.released}
             image={game.background_image}
             key={game.id}
+            id={game.id}
           ></Game>
         ))}
       </Games>
